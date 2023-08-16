@@ -8,15 +8,15 @@ Note that I am working on a local machine. If you are doing this on a server the
 
 If you haven't done so yet, we will import the three classes from the [Data Analysis] repository that we are going to need:
 
-Sample.DBExpansion.Util.REST.disp
+[Sample.DBExpansion.Util.REST.disp.cls](https://github.com/Ari-Glikman/DataAnalysis/blob/main/src/Sample/DBExpansion/Util/REST/disp.cls)
 
-Sample.DBExpansion.Util.REST.impl
+[Sample.DBExpansion.Util.REST.impl.cls](https://github.com/Ari-Glikman/DataAnalysis/blob/main/src/Sample/DBExpansion/Util/REST/impl.cls)
 
-Sample.DBExpansion.Util.REST.spec
+[Sample.DBExpansion.Util.REST.spec.cls](https://github.com/Ari-Glikman/DataAnalysis/blob/main/src/Sample/DBExpansion/Util/REST/spec.cls)
 
 You can take the [xml](https://github.com/Ari-Glikman/DataCollection-UI/blob/main/Importable/REST.xml) and import it to your system.
 
-The spec will actually create the dispatch class and implementation template. If you're interested in learning more about this process check out my colleague's, Eduard Lebedyuk, great [article](https://community.intersystems.com/post/developing-rest-api-spec-first-approach) 
+The spec will actually create the dispatch class and implementation template. If you're interested in learning more about this process check out my colleague's, Eduard Lebedyuk, great [article](https://community.intersystems.com/post/developing-rest-api-spec-first-approach).
 
 
 ## Set up the APIs
