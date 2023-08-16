@@ -1,4 +1,4 @@
-# Graphical display of tables
+# Graphical Display of Tables
 
 Here we will document how you can get the results of your [Data Collection](https://github.com/Ari-Glikman/DataCollection) to be displayed graphically. The output of your project will look like this:
 
@@ -138,8 +138,9 @@ npm install --save react-chartjs-2
 
 6. Use ```npm start``` to load your page, and you should now get the page with your database analytics.
 
+Feel free to play around with the code and make improvements or customizations that would suit your organization best!
    
 
-If you have any suggestions on how I can improve this please let me know as well :)
+If you have any suggestions on how I can improve this from our end please let me know as well :)
 
 Shoot me an email: ari.glikman@intersystems.com
