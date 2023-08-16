@@ -128,7 +128,7 @@ npm start
 You should automatically be redirected to a tab that shows you the following (if not, go to http://localhost:3000/):
 ![image](https://github.com/Ari-Glikman/DataCollection-UI/assets/73805987/a9de547f-c657-44bf-8d98-c0bc86f8c25d)
 
-5. Now let's customize for our needs. Download the src folder in this repository and replace the one in your directory that was automatically created by our previous commands. From within the data-collection-graphs directory, install chart-js and react-chartjs-2 as follows:
+5. Now let's customize for our needs. Stop your app from the terminal with ^C. Download the src folder in this repository and replace the one in your directory that was automatically created by our previous commands. From within the data-collection-graphs directory, install chart-js and react-chartjs-2 as follows:
 ```
 npm install --save chart.js
 ```
@@ -137,8 +137,9 @@ npm install --save react-chartjs-2
 ```
 
    
-7. Refresh your page, and you should now get the page looking like we did above.
+6. Use ```npm start``` to load your page, and you should now get the page with your four graphs :)
 
+   
 
 If you have any suggestions on how I can improve this please let me know as well :)
 
