@@ -136,7 +136,7 @@ npm install --save chart.js
 npm install --save react-chartjs-2
 ```
 
-6. Use ```npm start``` to load your page, and you should now get the page with your four graphs
+6. Use ```npm start``` to load your page, and you should now get the page with your database analytics.
 
    
 
