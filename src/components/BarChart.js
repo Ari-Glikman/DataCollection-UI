@@ -7,12 +7,8 @@ ChartJS.register(
 )
 
 const BarChart = () => {
-    
     const [chart, setChart] = useState([])
-    
-
      var baseUrl = "http://localhost/Sample/dbAnalysis/globals/all"
-    
     useEffect(() =>{
         const fetchGlobals = async () => {
             await fetch(`${baseUrl}`,{
@@ -22,8 +18,6 @@ const BarChart = () => {
                     "Authorization": "Basic c3VwZXJ1c2VyOlNZUw==",
                     'Access-Control-Allow-Origin': '*',
                     'Access-Control-Allow-Credentials': 'true'
-
-                   
                 }
             }).then((response) =>{
                 response.json().then((json)=> {
@@ -37,7 +31,7 @@ const BarChart = () => {
         fetchGlobals()
     },
     [baseUrl])
-
+    
     var data =  {
         labels: chart?.map(x=> x.Name),
         datasets: [{
