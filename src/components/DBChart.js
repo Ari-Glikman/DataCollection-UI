@@ -8,7 +8,7 @@ const DBChart = () => {
     
     const [chart, setChart] = useState([])
 
-    var baseUrl = "http://localhost:52776/Sample/dbAnalysis/db/history"
+    var baseUrl = "http://localhost/Sample/dbAnalysis/db/history"
 
 
 
@@ -22,7 +22,7 @@ const DBChart = () => {
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Methods": "GET",
                     "Access-Control-Allow-Headers": "Content-Type, Authorization",
-                    "Authorization": `Basic ${btoa('aglikman:1234')}`,
+                    "Authorization": "Basic c3VwZXJ1c2VyOlNZUw=="
                     
                 }
                 
