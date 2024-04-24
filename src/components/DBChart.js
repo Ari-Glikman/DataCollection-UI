@@ -5,17 +5,10 @@ import { Chart, registerables} from 'chart.js';
 Chart.register(...registerables);
 
 const DBChart = () => {
-    
     const [chart, setChart] = useState([])
-
     var baseUrl = "http://localhost/Sample/dbAnalysis/db/history"
-
-
-
-
     useEffect(() =>{
         const fetchGlobals = async () => {
-           
             await fetch(`${baseUrl}`,{
                 method: "GET",
                 headers: {
@@ -23,9 +16,7 @@ const DBChart = () => {
                     "Access-Control-Allow-Methods": "GET",
                     "Access-Control-Allow-Headers": "Content-Type, Authorization",
                     "Authorization": "Basic c3VwZXJ1c2VyOlNZUw=="
-                    
                 }
-                
             }).then((response) =>{
                 response.json().then((json)=> {
                     console.log(json)
@@ -54,26 +45,17 @@ const DBChart = () => {
         borderColor: '#a52a2a',
         backgroundColor: '#a52a2a',
         borderWidth: 1
-
         }
-    
     ]
       }
-
-
-
    var options = {
-    
     onClick: (e, elements) => {
         if(elements.length)
         {
             console.log(elements[0])
             ///alert(elements[0]?.index)
-            
         }
     },
-
-    
     maintainAspectRatio: false,
     scales: {
         x: {
@@ -92,18 +74,12 @@ const DBChart = () => {
         beginAtZero: true,
       }
     },
-
-
     legend: {
         labels:{
-
             fontSize: 26
         }
     }
- 
   }  
-    
-    
     return (
         <div>
             <Line
@@ -115,5 +91,4 @@ const DBChart = () => {
         </div>
     )
 }
-
 export default DBChart
