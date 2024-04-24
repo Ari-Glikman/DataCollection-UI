@@ -11,7 +11,7 @@ const BarChart = () => {
     const [chart, setChart] = useState([])
     
 
-     var baseUrl = "http://localhost:52776/Sample/dbAnalysis/globals/all"
+     var baseUrl = "http://localhost/Sample/dbAnalysis/globals/all"
     
     useEffect(() =>{
         const fetchGlobals = async () => {
@@ -19,6 +19,7 @@ const BarChart = () => {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
+                    "Authorization": "Basic c3VwZXJ1c2VyOlNZUw==",
                     'Access-Control-Allow-Origin': '*',
                     'Access-Control-Allow-Credentials': 'true'
 
