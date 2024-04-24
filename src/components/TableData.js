@@ -6,7 +6,11 @@ import React, {useState, useEffect} from 'react'
 
 
     const fetchData = () => {
-      fetch('http://localhost:52776/Sample/dbAnalysis/globals/table/'+timeBack)
+      fetch('http://localhost/Sample/dbAnalysis/globals/table/' + timeBack, {
+        headers: {
+          "Authorization": "Basic c3VwZXJ1c2VyOlNZUw=="
+        }
+      })
         .then((response) => response.json())
         .then((actualData) => {
           console.log(actualData);
