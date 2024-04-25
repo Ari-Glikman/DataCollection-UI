@@ -6,7 +6,7 @@ Here we will document how you can get the results of your [Data Collection](http
 
 Note that I am working on a local machine. If you are doing this on a server then be aware to use the correct IP address.
 
-If you haven't done so yet, we will import the three classes from the that we are going to need (note that we will edit them later):
+First, we will import the three classes from the that we are going to need (note that we will edit them later):
 
 You can take the [xml](https://github.com/Ari-Glikman/DataCollection-UI/blob/main/Importable/REST.xml) and import it to your system.
 
