@@ -165,6 +165,6 @@ With Cross-Origin Resource Sharing (CORS) configured, after refreshing the page,
 
 Feel free to play around with the code and make improvements or customizations that would suit your organization best!
 
-If you have any suggestions on how I can improve this from our end please let me know as well :)
+If you have any suggestions on how I can improve this from our end please let me know as well.
 
-Shoot me an email: ari.glikman@intersystems.com
+Continue onto the data analysis repo [here](https://github.com/Ari-Glikman/DataAnalysis)
