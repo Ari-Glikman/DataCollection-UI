@@ -6,13 +6,7 @@ Here we will document how you can get the results of your [Data Collection](http
 
 Note that I am working on a local machine. If you are doing this on a server then be aware to use the correct IP address.
 
-If you haven't done so yet, we will import the three classes from the [Data Analysis] repository that we are going to need:
-
-[Sample.DBExpansion.Util.REST.disp.cls](https://github.com/Ari-Glikman/DataAnalysis/blob/main/src/Sample/DBExpansion/Util/REST/disp.cls)
-
-[Sample.DBExpansion.Util.REST.impl.cls](https://github.com/Ari-Glikman/DataAnalysis/blob/main/src/Sample/DBExpansion/Util/REST/impl.cls)
-
-[Sample.DBExpansion.Util.REST.spec.cls](https://github.com/Ari-Glikman/DataAnalysis/blob/main/src/Sample/DBExpansion/Util/REST/spec.cls)
+If you haven't done so yet, we will import the three classes from the that we are going to need (note that we will edit them later):
 
 You can take the [xml](https://github.com/Ari-Glikman/DataCollection-UI/blob/main/Importable/REST.xml) and import it to your system.
 
@@ -20,7 +14,7 @@ The spec will actually create the dispatch class and implementation template. If
 
 
 ## Set up the APIs
-Note that in this demo we will be using unauthenticated access. We also assume that there is already data in the Sample_DBExpansion_Data.DBAnalysisInfo and Sample_DBExpansion_Data.GlobalAnalysisInfo tables. If there isn't then go back to [Data Collection](https://github.com/Ari-Glikman/DataCollection) and get some data.
+Note that in this demo we will be using Basic Authorization. We also assume that there is already data in the Sample_DBExpansion_Data.DBAnalysisInfo and Sample_DBExpansion_Data.GlobalAnalysisInfo tables. If there isn't then go back to [Data Collection](https://github.com/Ari-Glikman/DataCollection) and get some data.
 
 1. Let's first create an endpoint which will give us access to our data:
 ![image](https://github.com/Ari-Glikman/DataCollection-UI/assets/73805987/8da97973-ac8d-45be-9c9f-ec355910f1f6)
@@ -137,10 +131,39 @@ npm install --save chart.js
 npm install --save react-chartjs-2
 ```
 
+In the [src/components](https://github.com/Ari-Glikman/DataCollection-UI/tree/main/src/components) folder there is the JavaScript code that is calling the API endpoints to obtain data for the graph. If your server is not running on localhost:80 then you should change the baseUrl (and base64 encoded basic authorization, if that's the authorization method you have chosen to use) in [BarChart.js](https://github.com/Ari-Glikman/DataCollection-UI/blob/main/src/components/BarChart.js), [DBChart.js](https://github.com/Ari-Glikman/DataCollection-UI/blob/main/src/components/DBChart.js), [SingleGlobalHistoryChart.js](https://github.com/Ari-Glikman/DataCollection-UI/blob/main/src/components/SingleGlobalHistoryChart.js), and [TableData.js](https://github.com/Ari-Glikman/DataCollection-UI/blob/main/src/components/TableData.js).
+
 6. Use ```npm start``` to load your page, and you should now get the page with your database analytics.
 
+*Note:* You may notice a blank page and upon opening the web developer tools see that there is an error: ```Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:52775/Sample/dbAnalysis/globals/all. (Reason: CORS preflight response did not succeed). Status code: 404.```
+
+If this is the case then add the following class method into your generated Sample.DBExpansion.Util.REST.disp.cls:
+
+```
+ClassMethod OnHandleCorsRequest(pUrl As %String) As %Status
+{
+     //s ^CORS("OnHandleCorsRequest")="Handled"
+     #; Get the origin
+     Set tOrigin=$Get(%request.CgiEnvs("HTTP_ORIGIN"))
+     #; Allow requested origin
+     Do ..SetResponseHeaderIfEmpty("Access-Control-Allow-Origin",tOrigin)
+     #; Set allow credentials to be true
+     Do ..SetResponseHeaderIfEmpty("Access-Control-Allow-Credentials","true")
+     #; Allow requested headers
+     Set tHeaders=$Get(%request.CgiEnvs("HTTP_ACCESS_CONTROL_REQUEST_HEADERS"))
+     Do ..SetResponseHeaderIfEmpty("Access-Control-Allow-Headers",tHeaders)
+     #; Allow requested method
+     Set tMethod=$Get(%request.CgiEnvs("HTTP_ACCESS_CONTROL_REQUEST_METHOD"))
+     Do ..SetResponseHeaderIfEmpty("Access-Control-Allow-Method",tMethod)
+     Return $$$OK
+}
+```
+
+As we are not using delegated authentication here, the request will be performed by the CSPSystem user. This means that we must give the CSPSystem user the appropriate roles for the queries we are making. Read more about that [here](https://docs.intersystems.com/iris20241/csp/docbook/DocBook.UI.Page.cls?KEY=GREST_specification#GREST_specification_cors) (or don't, and just give the CSPSystem user the role needed to read data from your namespace/database.)
+
+With Cross-Origin Resource Sharing (CORS) configured, after refreshing the page, you should see the charts begin to populate and look like what we see at the top of this page.
+
 Feel free to play around with the code and make improvements or customizations that would suit your organization best!
-   
 
 If you have any suggestions on how I can improve this from our end please let me know as well :)
 
