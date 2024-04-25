@@ -10,7 +10,7 @@ If you haven't done so yet, we will import the three classes from the that we ar
 
 You can take the [xml](https://github.com/Ari-Glikman/DataCollection-UI/blob/main/Importable/REST.xml) and import it to your system.
 
-The spec will actually create the dispatch class and implementation template. If you're interested in learning more about this process check out my colleague's, Eduard Lebedyuk, great [article](https://community.intersystems.com/post/developing-rest-api-spec-first-approach).
+The spec will actually create the dispatch class and implementation template. If you're interested in learning more about this process check out my colleague's, Eduard Lebedyuk's, great [article](https://community.intersystems.com/post/developing-rest-api-spec-first-approach).
 
 
 ## Set up the APIs
