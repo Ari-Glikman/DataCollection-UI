@@ -23,7 +23,8 @@ The spec will actually create the dispatch class and implementation template. If
 Note that in this demo we will be using unauthenticated access. We also assume that there is already data in the Sample_DBExpansion_Data.DBAnalysisInfo and Sample_DBExpansion_Data.GlobalAnalysisInfo tables. If there isn't then go back to [Data Collection](https://github.com/Ari-Glikman/DataCollection) and get some data.
 
 1. Let's first create an endpoint which will give us access to our data:
-![image](https://github.com/Ari-Glikman/DataCollection-UI/assets/73805987/db394e00-56ee-4b05-9bb0-93aa3247fb73)
+![image](https://github.com/Ari-Glikman/DataCollection-UI/assets/73805987/8da97973-ac8d-45be-9c9f-ec355910f1f6)
+
 Fill in the same names unless you plan to customize the code for the react app on your own.
 
 2. Click save and let's test our APIs. Open up postman, and send the following request:
