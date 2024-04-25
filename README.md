@@ -27,7 +27,7 @@ Note that in this demo we will be using unauthenticated access. We also assume t
 
 Fill in the same names unless you plan to customize the code for the react app on your own.
 
-2. Click save and let's test our APIs. Open up postman, and send the following request:
+2. Click save and let's test our APIs. Open up postman, and send the following request (make sure you use the proper authorization):
 ![image](https://github.com/Ari-Glikman/DataCollection-UI/assets/73805987/be2d2bb5-3295-477e-9e1c-0b016f76067c)
 
 Our output should look something like this:
